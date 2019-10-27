@@ -2,7 +2,24 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
+const hearts = document.querySelectorAll('.like');
 // Your JavaScript code goes here!
+
+function like(e) {
+  const heart = e.target;
+  mimicServerCall ('theUrl')
+  .then(function(serverMessage){
+    heart.innerText = glyphState[heart.innerText];
+    heart.style.color = colorState[heart.style.color];
+  })
+  
+  .catch (function(error) {
+    document.getElementById('modal').className = "";
+  });
+}
+ for (const gly of hearts) {
+   glyp.addEventListner("click", likecallback);
+ }
 
 
 
