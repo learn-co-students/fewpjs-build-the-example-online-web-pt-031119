@@ -10,4 +10,4 @@ describe( "main.js", () => {
     let modal = document.querySelector('.hidden')
     expect(modal).not.to.equal(null)
   } )
-} )
+} 
