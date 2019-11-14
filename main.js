@@ -4,36 +4,32 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-let glyphStates = {
+let heartShapes = {
   "♡": "♥",
   "♥": "♡"
 };
 
-let colorStates = {
+let heartColors = {
   "red": "",
   "": "red"
 };
 
-let articleHearts = document.querySelectorAll(".like");
+let pageHearts = document.querySelectorAll(".like");
 
-function likeCallback(e) {
+function likes(e) {
   let heart = e.target;
-  mimicServerCall("bogusUrl")
-    //OR: mimicServerCall("bogusUrl", {forceFailure: true})
+  mimicServerCall("blahBlahBlah")
     .then(function (serverMessage) {
-      heart.innerText = glyphStates[heart.innerText];
-      heart.style.color = colorStates[heart.style.color];
+      heart.innerText = heartShapes[heart.innerText];
+      heart.style.color = heartColors[heart.style.color];
     })
     .catch(function (error) {
-      // Basic
-      // alert("Something went wrong!");
-      // or....
       document.getElementById("modal").className = "";
     });
 }
 
-for (let glyph of articleHearts) {
-  glyph.addEventListener("click", likeCallback);
+for (let shape of pageHearts) {
+  shape.addEventListener("click", likes);
 }
 
 
