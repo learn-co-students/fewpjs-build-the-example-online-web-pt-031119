@@ -7,11 +7,12 @@ const modal = document.querySelector("#modal");
 modal.classList.add("hidden");
 
 const likeHeartsArray = document.querySelectorAll(".like-glyph");
-likeHeartsArray.forEach(likeHeart =>
-  likeHeart.addEventListener("click", () => handleHeartClick(likeHeart))
+likeHeartsArray.forEach(
+  likeHeart => likeHeart.addEventListener("click", handleHeartClick) //or if you need to pass event and something else event => handleHeartClick(event);
 );
 
-const handleHeartClick = likeHeart => {
+const handleHeartClick = event => {
+  const likeHeart = event.currentTarget;
   mimicServerCall()
     .then(() => {
       likeHeart.innerHTML === FULL_HEART
